@@ -10,7 +10,6 @@ import java.io.Serializable;
 import java.time.Instant;
 @Data
 @MappedSuperclass
-@Entity
 
 public class AbstractEntity implements Serializable {
     @Id

@@ -1,14 +1,13 @@
 package com.hakim.gestiondestock.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -29,4 +28,9 @@ public class Article extends AbstractEntity{
     private BigDecimal prixUnitairTtc;
     @Column(name = "photo")
     private String photo;
+    @OneToMany(mappedBy = "article")
+    private List<MvStk> mvStks;
+    @ManyToOne
+    @JoinColumn(name = "idcategory")
+    private Category category;
 }
