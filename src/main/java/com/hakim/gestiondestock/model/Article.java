@@ -1,15 +1,13 @@
 package com.hakim.gestiondestock.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -30,7 +28,9 @@ public class Article extends AbstractEntity{
     private String photo;
     @OneToMany(mappedBy = "article")
     private List<MvStk> mvStks;
+    private TypeMvStk TypeMvt;
     @ManyToOne
     @JoinColumn(name = "idcategory")
     private Category category;
+
 }

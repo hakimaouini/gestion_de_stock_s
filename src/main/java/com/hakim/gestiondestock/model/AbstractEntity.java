@@ -2,6 +2,7 @@ package com.hakim.gestiondestock.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -9,7 +10,9 @@ import org.springframework.data.annotation.LastModifiedDate;
 import java.io.Serializable;
 import java.time.Instant;
 @Data
+
 @MappedSuperclass
+@EntityListeners(AutoCloseable.class)
 
 public class AbstractEntity implements Serializable {
     @Id

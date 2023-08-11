@@ -1,15 +1,13 @@
 package com.hakim.gestiondestock.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.Instant;
 import java.util.List;
 
 @Data
+
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -20,10 +18,6 @@ public class CommandeClient extends  AbstractEntity {
     private String code;
     @Column(name = "datecommande")
     private Instant dateCommande;
-
-
-
-
     @ManyToOne
     @JoinColumn(name = "idclient")
     private Client client;
