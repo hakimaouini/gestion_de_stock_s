@@ -1,13 +1,19 @@
 package com.hakim.gestiondestock.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
-import jakarta.persistence.OneToMany;
-import lombok.Builder;
+import jakarta.persistence.*;
+import lombok.*;
 
 import java.util.List;
 
+@Data
 @Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
+@Entity
+@Table(name = "Entreprise")
 public class Entreprise extends AbstractEntity{
     @Column(name = "nom")
     private String nom;

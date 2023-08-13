@@ -12,4 +12,5 @@ public class ligneCommandeFournisseurDto {
     private ArticleDto article;
 
 
+
 }
